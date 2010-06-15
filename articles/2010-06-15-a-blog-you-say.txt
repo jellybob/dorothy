@@ -1,0 +1,20 @@
+--- 
+title: A Blog, You Say?
+date: 15/06/2010
+
+Yes, a blog! I'm once again going to try writing regularly. Whether or not 
+this descends into the usual deriliction of previous attempts we'll have to
+see, but I'm hopeful.
+~
+I'm using a nice simple tool, in the shape of 
+[Toto](http://github.com/cloudhead/toto) which is a very minimalist blogging
+engine, in the hope that using nothing but plain text will help me to focus
+more on writing, and less on endlessly tweaking things.
+
+Topics to be covered include:
+
+* Software development, particularly using Ruby
+* Systems administration, focusing on automated infrastructures
+* Games
+* Cooking
+* And a bit of everything else for good measure
