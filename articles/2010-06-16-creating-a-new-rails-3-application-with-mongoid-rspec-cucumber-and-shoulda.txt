@@ -63,7 +63,7 @@ the following, which should be fairly self explanatory.
       gem 'cucumber-rails'
       gem 'rspec-rails', '>= 2.0.0.beta.12'
       gem 'factory_girl'
-      gem 'mongoid-rspec'
+      gem 'mongoid-rspec', :require => false
     end
 
 And then run <code>bundle install</code> to install all the dependencies.
@@ -94,6 +94,10 @@ Then insert the following after <code>require 'rspec/rails'</code> in
 <code>spec/spec_helper.rb</code>
 
     require 'mongoid-rspec'
+
+And this after the <code>Rspec.configure</code> line:
+
+    include Mongoid::Matchers
 
 That's it for vanilla RSpec. Nothing more to be done. If you run <code>rake</code>
 now you should see.
