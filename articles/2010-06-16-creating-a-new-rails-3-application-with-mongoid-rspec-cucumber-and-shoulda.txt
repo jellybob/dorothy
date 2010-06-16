@@ -171,7 +171,9 @@ In <code>spec/spec_helper.rb</code>, after you require mongoid-rspec
     end
 
 And in <code>features/support/env.rb</code>, after Capybara configuration the
-same.
+same, followed by:
+
+    require 'factory_girl/step_definitions'
 
 Check out [Thoughtbot's article]("http://robots.thoughtbot.com/post/284805810/gimme-three-steps")
 on the bundled Cucumber steps.
