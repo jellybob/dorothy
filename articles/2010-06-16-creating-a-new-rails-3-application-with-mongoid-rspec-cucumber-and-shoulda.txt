@@ -1,0 +1,193 @@
+--- 
+title: Creating a new Rails 3 Application with Mongoid, RSpec,  Cucumber and Shoulda
+date: 16/06/2010
+
+This article will work through creating a new Rails 3 application ready to start
+building a site using [Mongoid]("http://mongoid.org/"), and testing it with 
+[Cucumber]("http://cukes.info") and [RSpec]("http://rspec.info").
+
+I'm going to assume you're familiar with the basics, and you've got a copy of
+Ruby 1.8.7 and MongoDB installed and running. If that's not the case, go and 
+get it setup using [RVM]("http://rvm.beginrescueend.com/") or similar.
+
+As much as I'd love to be using Ruby 1.9.2, ruby-debug doesn't work with it yet,
+and I'm not about to give up my precious debugger.
+
+Creating the Application
+------------------------
+
+You'll need to install the pre-release version (currently 3.0.0 beta 4) before
+we start:
+
+    # gem install rails --version "3.0.0.beta4"
+
+Once that's done, you can create a new application. We're going to skip some of
+the default components, because we'll be using alternatives.
+
+    # rails new example_app --skip-activerecord \
+                            --skip-prototype \
+                            --skip-testunit
+    create  
+    create  README
+    create  Rakefile
+    create  config.ru
+    ... lots more create statements ...
+    create  tmp/pids
+    create  vendor/plugins
+    create  vendor/plugins/.gitkeep
+
+Install the Gems
+----------------
+
+Once our application has been generated we need to specify the gems we'll be 
+using in the Gemfile, which is used by [Bundler]("http://gembundler.com/") to
+manage dependencies.
+
+In your application root, open up <code>Gemfile</code> and replace it with
+the following, which should be fairly self explanatory.
+
+    source "http://rubygems.org"
+    
+    gem 'rails', '3.0.0.beta4'
+    gem 'mongoid', :git => 'git://github.com/durran/mongoid.git'
+    # C extension to improve MongoDB performance
+    gem 'bson_ext'
+
+    group :development do
+      gem 'unicorn'
+      gem 'ruby-debug'
+    end
+
+    group :test do
+      gem 'capybara'
+      gem 'cucumber-rails'
+      gem 'rspec-rails', '>= 2.0.0.beta.12'
+      gem 'factory_girl'
+      gem 'mongoid-rspec'
+    end
+
+And then run <code>bundle install</code> to install all the dependencies.
+
+Install Mongoid
+---------------
+
+The next few steps are mostly just running generators, thanks to the fancy new
+integration available with Rails 3.
+
+    # rails g mongoid:config
+
+Then open up <code>config/mongoid.yml</code> and make any changes neccesary for
+your machine. The defaults work for me when using a copy of Mongo installed using
+[Homebrew]("http://mxcl.github.com/homebrew/").
+
+At this point, when you generate a new model, you'll get a Mongoid document rather
+then an ActiveRecord model.
+
+Install RSpec
+-------------
+
+Installing RSpec is very similar:
+
+    # rails g rspec:install
+
+Then insert the following after <code>require 'rspec/rails'</code> in 
+<code>spec/spec_helper.rb</code>
+
+    require 'mongoid-rspec'
+
+That's it for vanilla RSpec. Nothing more to be done. If you run <code>rake</code>
+now you should see.
+
+    (in /Users/jon/Dropbox/example_app)
+    No examples matching ./spec/**/*_spec.rb could be found
+
+Install Cucumber
+----------------
+
+We're going to install Cucumber telling it to use Capybara so that we can test
+Javascript as well, and not to modify database.yml
+
+    rails g cucumber:install --capybara --skip-database
+
+We'll also need to provide it with a placeholder task for db:test:prepare,
+because it expects that to be present as well. If it's not their, you'll get the
+error <code>Don't know how to build task 'db:test:prepare'</code>.
+Put the following in <code>lib/tasks/db.rake</code>
+
+    namespace :db do
+      namespace :test do
+        task :prepare do
+          # Placeholder for Cucumber
+        end
+      end
+    end
+
+And the Cucumber environment needs changing to deal with ActiveRecord not being
+present as well. Edit <code>features/support/env.rb</code> and comment out or
+remove the line below.
+
+    Cucumber::Rails::World.use_transactional_fixtures = true
+
+While you're in there, remove the if statement around Database Cleaner's setup
+so that the database is also emptied out for MongoDB.
+
+    # if defined?(ActiveRecord::Base)
+      begin
+        require 'database_cleaner'
+        DatabaseCleaner.strategy = :truncation
+      rescue LoadError => ignore_if_database_cleaner_not_present
+      end
+    # end
+
+Now that all that has been done, you should be able to run 
+<code>rake cucumber:ok</code> and get this output:
+
+    Using the default profile...
+
+
+    0 scenarios
+    0 steps
+    0m0.000s
+
+Testing Sugar
+-------------
+
+Now we're going to add in Factory Girl to the test suite to make things 
+that little bit more conveniant for us. It even comes with Cucumber steps
+to build models from factories.
+
+Create a directory for factories. We'll eventually fill this with a file for
+each model type, in the format <code>model_name_factories.rb</code>.
+
+    # mkdir spec/factories
+
+And then require factory_girl and the factories for both RSpec and Cucumber.
+
+In <code>spec/spec_helper.rb</code>, after you require mongoid-rspec
+
+    require 'factory_girl'
+    Dir.glob(Rails.root.join("spec", "factories", "*.rb").to_s).each do |f|
+      require f
+    end
+
+And in <code>features/support/env.rb</code>, after Capybara configuration the
+same.
+
+Check out [Thoughtbot's article]("http://robots.thoughtbot.com/post/284805810/gimme-three-steps")
+on the bundled Cucumber steps.
+
+Bonus! jQuery
+-------------
+
+You may have noticed my call to --skip-prototype. That's because we're going to
+use jQuery instead.
+
+    curl http://github.com/rails/jquery-ujs/raw/master/src/rails.js > public/javascripts/rails.js
+
+And then when you load jQuery, load rails.js as well, and you can use the standard
+Rails helpers for Javascript and it'll all just work.
+
+And Your Done
+-------------
+
+Thats it. You're ready to rock and roll now.
