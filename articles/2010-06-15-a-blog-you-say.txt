@@ -1,6 +1,7 @@
 --- 
 title: A Blog, You Say?
 date: 15/06/2010
+category: Meta
 
 Yes, a blog! I'm once again going to try writing regularly. Whether or not 
 this descends into the usual deriliction of previous attempts we'll have to

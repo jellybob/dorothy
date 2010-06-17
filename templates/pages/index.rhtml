@@ -4,6 +4,9 @@
       <header>
         <h1><a href="<%= article.path %>"><%= article.title %></a></h1>
         <span class="date"><%= article.date %></span>
+        <% if article.category %>
+          <h2><%= article.category %></h2>
+        <% end %>
       </header>
 
       <section class="content">

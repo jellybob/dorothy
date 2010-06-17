@@ -1,11 +1,12 @@
 --- 
 title: Creating a new Rails 3 Application with Mongoid, RSpec,  Cucumber and Shoulda
 date: 16/06/2010
+category: Development
 
 This article will work through creating a new Rails 3 application ready to start
 building a site using [Mongoid]("http://mongoid.org/"), and testing it with 
 [Cucumber]("http://cukes.info") and [RSpec]("http://rspec.info").
-
+~
 I'm going to assume you're familiar with the basics, and you've got a copy of
 Ruby 1.8.7 and MongoDB installed and running. If that's not the case, go and 
 get it setup using [RVM]("http://rvm.beginrescueend.com/") or similar.

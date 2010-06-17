@@ -64,6 +64,10 @@ body > header > h1 {
 .post:last-child {
   margin-bottom: 10px;
 }
+.post h2 {
+  font-size: 0.9em;
+  display: block;
+}
 .post p {
   margin: 10px 0;
 }

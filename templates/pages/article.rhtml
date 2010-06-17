@@ -2,6 +2,9 @@
   <header>
     <h1><%= title %></h1>
     <span class="date"><%= date %></span>
+    <% if article.category %>
+      <h2><%= article.category %></h2>
+    <% end %>
   </header>
 
   <section class="content">
