@@ -1,0 +1,10 @@
+--- 
+title: Installing an Ubuntu 10.04 Server Under VirtualBox
+date: 22/06/2010
+
+When installing Ubuntu 10.04 Server as a VirtualBox VM, don't use the 
+"Install Minimal Virtual Machine" option in the installer options.
+
+Strangely, that causes installing it as a VM to fail spectacularly, with
+the boot loader failing to find any hard disks. A standard install seems
+to work fine.
