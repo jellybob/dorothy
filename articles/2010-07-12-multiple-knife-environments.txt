@@ -1,0 +1,52 @@
+--- 
+title: Multiple Knife Environments
+date: 12/07/2010
+category: Sysadmin
+tags: chef, code, knife, config
+
+At work we have two Chef environments, staging and production, so that we
+don't break our entire infrastructure because of a typo. Changes go to
+staging, and once we know they work we push to production.
+
+To do that, I use a Knife config file that looks something like this:
+
+    CHEF_BASE = "/path/to/svn_root"
+    CHEF_ENV = ENV['CHEF_ENV'] || "staging"
+    case CHEF_ENV
+      when 'staging'
+        CHEF_SERVER = "https://chef.staging.example.org:443"
+        CHEF_REPO = "#{CHEF_BASE}/trunk"
+      when 'production'
+        CHEF_SERVER = "https://chef.prod.example.org:443"
+        CHEF_REPO = "#{CHEF_BASE}/branches/production"
+    end
+
+    client_key               "#{ENV['HOME']}/.chef/#{CHEF_ENV}.pem"
+    validation_key           "#{CHEF_REPO}/config/keys/#{CHEF_ENV}.pem"
+    chef_server_url          CHEF_SERVER
+    log_level                :info
+    log_location             STDOUT
+    node_name                `whoami`.chomp
+    validation_client_name   "chef-validator"
+    cache_type               'BasicFile'
+    cache_options( :path => "#{ENV['HOME']}/.chef/checksums" )
+    cookbook_path            ["#{CHEF_REPO}/cookbooks", "#{CHEF_REPO}/site_cookbooks"]
+
+    knife({
+      :rackspace_api_username => "username",
+      :rackspace_api_key  => "api_key",
+      :environment => CHEF_ENV
+    })
+
+Using that, by default any knife command I run will go to the staging server, but if
+do this: `CHEF_ENV=production knife cookbook upload -a` then it will go to the production
+server instead.
+
+This does depend on some conventions we have in place in our Chef repository. As you can
+see, we keep validation keys in SVN, and each user's client is named after their user login.
+
+Footnote
+========
+
+How do we know they work? Nagios, which under the staging environment is effectively used
+as a test suite - if everything stays green, then it's considered to be working.
