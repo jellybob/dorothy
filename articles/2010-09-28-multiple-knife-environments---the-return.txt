@@ -1,0 +1,51 @@
+--- 
+title: Multiple Knife Environments - The Return
+date: 28/09/2010
+
+There's a theme developing here, seeing as how my last article was about this as well.
+
+I'm now up to three Chef environments I'm responsible for, running on different servers
+and repositories, and updating the previous config was getting to be a pain. So, here's 
+the new one. I should put it on GitHub or something, but at the moment it lives in my 
+config files repository which is also full of SSH keys and other things I don't want to
+give you. Thankfully Chef 0.9.10 has support for directory specific knife configs, which
+will mean I can stop hacking this stuff together.
+
+Start off with something like this in ~/.chef/knife.rb
+
+  CHEF_ENV = ENV['CHEF_ENV'] || "your_environment"
+  env_config = YAML.load_file("#{ENV['HOME']}/.chef/#{CHEF_ENV}/config.yml")
+
+  client_key               "#{ENV['HOME']}/.chef/#{CHEF_ENV}/user.pem"
+  validation_key           "#{ENV['HOME']}/.chef/#{CHEF_ENV}/validator.pem"
+  chef_server_url          env_config["server"]
+  log_level                :info
+  log_location             STDOUT
+  node_name                env_config["node_name"]
+  validation_client_name   env_config["validator"] || "chef-validator"
+  cache_type               'BasicFile'
+  cache_options( :path => "#{ENV['HOME']}/.chef/#{CHEF_ENV}/checksums" )
+  cookbook_path            ["#{env_config["path"]}/cookbooks", "#{env_config["path"]}/site_cookbooks"]
+
+  knife({
+    :rackspace_api_username => env_config["rackspace"]["username"],
+    :rackspace_api_key  => env_config["rackspace"]["api_key"],
+    :environment => env_config["environment"] 
+  })
+
+And then in ~/.chef/your_environment/config.yml put something like this:
+
+  node_name: "jon"
+  server: "https://api.opscode.com/organizations/client"
+  path: "/Users/jon/Work/Client/Chef"
+  environment: "production"
+  validator: "validator"
+  rackspace:
+    username: "username"
+    api_key: "api_key"
+
+And copy your validation key to ~/.chef/your_environment/validator.pem and the user key to
+~/.chef/your_environment/user.pem - after that, all should work. Pick your environment by
+setting CHEF_ENV, for example:
+
+  CHEF_ENV=other_client knife node list
