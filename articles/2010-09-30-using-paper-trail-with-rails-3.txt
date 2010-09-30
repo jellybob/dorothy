@@ -1,6 +1,7 @@
 --- 
 title: Using Paper Trail with Rails 3
 date: 30/09/2010
+category: Rails
 
 I installed Paper Trail for use in a Rails 3 application today, which seems to work fine, except for the migration generator not
 working to. Thankfully it's nice and easy to fix:
