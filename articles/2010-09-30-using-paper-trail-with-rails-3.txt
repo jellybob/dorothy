@@ -1,0 +1,14 @@
+--- 
+title: Using Paper Trail with Rails 3
+date: 30/09/2010
+
+I installed Paper Trail for use in a Rails 3 application today, which seems to work fine, except for the migration generator not
+working to. Thankfully it's nice and easy to fix:
+
+    rails g migration create_versions
+
+And then replace the contents of that file with the template from <a href="http://github.com/airblade/paper_trail/blob/master/generators/paper_trail/templates/create_versions.rb">GitHub</a>.
+
+Once that's done, migrate up, and you're good to go.
+
+Apparently there's a fork with a Rails 3 generator on GitHub already, so this should stop being neccesary once the author gets back from holiday.
