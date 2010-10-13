@@ -1,0 +1,29 @@
+--- 
+title: No route matches
+date: 13/10/2010
+category: Rails
+
+I keep getting the error "No route matches { :controller => "whatever", :action => "whatever" }" when
+testing Rails applications with RSpec. Everytime I do, I spend a while tracking it down. This time I
+decided to document what I did, so I can get on with life.
+
+Turns out it's because it was a nested resource, and I hadn't passed the parent ID. Instead of this:
+
+    describe ContactUserController do
+      context "when not logged in" do
+        before(:each) { get :show }
+        it_should_behave_like "an unauthenticated action"
+      end
+    end
+
+I needed:
+
+    describe ContactUserController do
+      context "when not logged in" do
+        before(:each) { get :show, :user_id => "ExampleUser" }
+        it_should_behave_like "an unauthenticated action"
+      end
+    end
+
+And now it works. Slightly embarrasing, but hopefully it'll help someone. Maybe even me when my short
+term memory causes me to forget it again.
