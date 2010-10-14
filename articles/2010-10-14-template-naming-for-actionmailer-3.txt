@@ -1,0 +1,13 @@
+--- 
+title: Template Naming for ActionMailer 3
+date: 14/10/2010
+category: Rails
+
+When naming templates for ActionMailer 3 remember that the naming format has changed.
+
+Templates used by in the form `method.text.plain.erb` and `method.text.html.erb`. They
+now take the form `method.text.erb` and `method.html.erb`.
+
+This bit me with a lot of frustration, since it won't automatically render the the old 
+form. I only realised what was happening when I tried to manually render it and got a
+deprecation warning in the logs.
