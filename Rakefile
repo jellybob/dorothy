@@ -8,8 +8,9 @@ desc "Create a new article."
 task :new do
   title = ask('Title: ')
   slug = title.empty?? nil : title.strip.slugize
-
-  article = {'title' => title, 'date' => Time.now.strftime("%d/%m/%Y")}.to_yaml
+  category = ask('Category: ')
+  
+  article = {'title' => title, 'date' => Time.now.strftime("%d/%m/%Y"), 'category' => category}.to_yaml
   article << "\n"
   article << "Once upon a time...\n\n"
 
