@@ -1,0 +1,10 @@
+--- 
+title: A Change of Scenery
+date: 28/10/2010
+category: Meta
+
+You may have noticed that the look of my blog has changed (if not, you're probably reading this via RSS, humour me and view it in a browser).
+
+I started work on a new site a while ago, but I just came to the realisation that this blog will do the job just fine really, and transplanted the design to it this evening.
+
+No doubt it will evolve, I might even test it in Internet Explorer at some point, but for now I'm actually quite happy with it.
