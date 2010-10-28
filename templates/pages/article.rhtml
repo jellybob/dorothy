@@ -1,10 +1,13 @@
 <article class="post">
   <header>
     <h1><%= title %></h1>
-    <span class="date"><%= date %></span>
-    <% if article.category %>
-      <h2><%= article.category %></h2>
-    <% end %>
+    <p class="metadata">
+      Posted
+      <% if article.category %>
+        <span class="category">under <%= article.category %></span>
+      <% end %>
+      on <span class="date"><%= article.date %></span>
+    </p>
   </header>
 
   <section class="content">

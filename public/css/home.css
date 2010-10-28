@@ -1,0 +1,95 @@
+/*
+Syntax error: Undefined variable: "$slushie".
+        on line 3 of app/styles/home.scss
+
+1: 
+2: aside.cta {
+3:   background-color: $slushie;
+4:   padding: 10px;
+5:   color: $cream;
+6: 
+7:   p {
+8:     font-size: 1.2em;
+
+Backtrace:
+app/styles/home.scss:3
+/Users/jon/.rvm/gems/ruby-1.9.2-p0/gems/haml-3.0.18/lib/sass/script/variable.rb:39:in `_perform'
+/Users/jon/.rvm/gems/ruby-1.9.2-p0/gems/haml-3.0.18/lib/sass/script/node.rb:61:in `perform'
+/Users/jon/.rvm/gems/ruby-1.9.2-p0/gems/haml-3.0.18/lib/sass/tree/prop_node.rb:132:in `perform!'
+/Users/jon/.rvm/gems/ruby-1.9.2-p0/gems/haml-3.0.18/lib/sass/tree/node.rb:305:in `_perform'
+/Users/jon/.rvm/gems/ruby-1.9.2-p0/gems/haml-3.0.18/lib/sass/tree/node.rb:213:in `perform'
+/Users/jon/.rvm/gems/ruby-1.9.2-p0/gems/haml-3.0.18/lib/sass/tree/node.rb:326:in `block in perform_children'
+/Users/jon/.rvm/gems/ruby-1.9.2-p0/gems/haml-3.0.18/lib/sass/tree/node.rb:326:in `map'
+/Users/jon/.rvm/gems/ruby-1.9.2-p0/gems/haml-3.0.18/lib/sass/tree/node.rb:326:in `perform_children'
+/Users/jon/.rvm/gems/ruby-1.9.2-p0/gems/haml-3.0.18/lib/sass/tree/node.rb:317:in `perform!'
+/Users/jon/.rvm/gems/ruby-1.9.2-p0/gems/haml-3.0.18/lib/sass/tree/rule_node.rb:191:in `perform!'
+/Users/jon/.rvm/gems/ruby-1.9.2-p0/gems/haml-3.0.18/lib/sass/tree/node.rb:305:in `_perform'
+/Users/jon/.rvm/gems/ruby-1.9.2-p0/gems/haml-3.0.18/lib/sass/tree/node.rb:213:in `perform'
+/Users/jon/.rvm/gems/ruby-1.9.2-p0/gems/haml-3.0.18/lib/sass/tree/node.rb:326:in `block in perform_children'
+/Users/jon/.rvm/gems/ruby-1.9.2-p0/gems/haml-3.0.18/lib/sass/tree/node.rb:326:in `map'
+/Users/jon/.rvm/gems/ruby-1.9.2-p0/gems/haml-3.0.18/lib/sass/tree/node.rb:326:in `perform_children'
+/Users/jon/.rvm/gems/ruby-1.9.2-p0/gems/haml-3.0.18/lib/sass/tree/node.rb:317:in `perform!'
+/Users/jon/.rvm/gems/ruby-1.9.2-p0/gems/haml-3.0.18/lib/sass/tree/root_node.rb:59:in `perform!'
+/Users/jon/.rvm/gems/ruby-1.9.2-p0/gems/haml-3.0.18/lib/sass/tree/node.rb:305:in `_perform'
+/Users/jon/.rvm/gems/ruby-1.9.2-p0/gems/haml-3.0.18/lib/sass/tree/node.rb:213:in `perform'
+/Users/jon/.rvm/gems/ruby-1.9.2-p0/gems/haml-3.0.18/lib/sass/tree/root_node.rb:37:in `perform'
+/Users/jon/.rvm/gems/ruby-1.9.2-p0/gems/haml-3.0.18/lib/sass/tree/root_node.rb:29:in `render'
+/Users/jon/.rvm/gems/ruby-1.9.2-p0/gems/haml-3.0.18/lib/sass/plugin.rb:220:in `update_stylesheet'
+/Users/jon/.rvm/gems/ruby-1.9.2-p0/gems/haml-3.0.18/lib/sass/plugin.rb:85:in `block (2 levels) in update_stylesheets'
+/Users/jon/.rvm/gems/ruby-1.9.2-p0/gems/haml-3.0.18/lib/sass/plugin.rb:78:in `each'
+/Users/jon/.rvm/gems/ruby-1.9.2-p0/gems/haml-3.0.18/lib/sass/plugin.rb:78:in `block in update_stylesheets'
+/Users/jon/.rvm/gems/ruby-1.9.2-p0/gems/haml-3.0.18/lib/sass/plugin.rb:76:in `each'
+/Users/jon/.rvm/gems/ruby-1.9.2-p0/gems/haml-3.0.18/lib/sass/plugin.rb:76:in `update_stylesheets'
+/Users/jon/.rvm/gems/ruby-1.9.2-p0/gems/haml-3.0.18/lib/sass/plugin.rb:50:in `check_for_updates'
+/Users/jon/.rvm/gems/ruby-1.9.2-p0/gems/haml-3.0.18/lib/sass/plugin/rack.rb:40:in `call'
+/Users/jon/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+/Users/jon/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_dispatch/middleware/head.rb:14:in `call'
+/Users/jon/.rvm/gems/ruby-1.9.2-p0/gems/rack-1.2.1/lib/rack/methodoverride.rb:24:in `call'
+/Users/jon/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+/Users/jon/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_dispatch/middleware/flash.rb:182:in `call'
+/Users/jon/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_dispatch/middleware/session/abstract_store.rb:149:in `call'
+/Users/jon/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_dispatch/middleware/cookies.rb:287:in `call'
+/Users/jon/.rvm/gems/ruby-1.9.2-p0/gems/activerecord-3.0.0/lib/active_record/query_cache.rb:32:in `block in call'
+/Users/jon/.rvm/gems/ruby-1.9.2-p0/gems/activerecord-3.0.0/lib/active_record/connection_adapters/abstract/query_cache.rb:28:in `cache'
+/Users/jon/.rvm/gems/ruby-1.9.2-p0/gems/activerecord-3.0.0/lib/active_record/query_cache.rb:12:in `cache'
+/Users/jon/.rvm/gems/ruby-1.9.2-p0/gems/activerecord-3.0.0/lib/active_record/query_cache.rb:31:in `call'
+/Users/jon/.rvm/gems/ruby-1.9.2-p0/gems/activerecord-3.0.0/lib/active_record/connection_adapters/abstract/connection_pool.rb:355:in `call'
+/Users/jon/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_dispatch/middleware/callbacks.rb:46:in `block in call'
+/Users/jon/.rvm/gems/ruby-1.9.2-p0/gems/activesupport-3.0.0/lib/active_support/callbacks.rb:415:in `_run_call_callbacks'
+/Users/jon/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_dispatch/middleware/callbacks.rb:44:in `call'
+/Users/jon/.rvm/gems/ruby-1.9.2-p0/gems/rack-1.2.1/lib/rack/sendfile.rb:107:in `call'
+/Users/jon/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_dispatch/middleware/remote_ip.rb:48:in `call'
+/Users/jon/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_dispatch/middleware/show_exceptions.rb:46:in `call'
+/Users/jon/.rvm/gems/ruby-1.9.2-p0/gems/railties-3.0.0/lib/rails/rack/logger.rb:13:in `call'
+/Users/jon/.rvm/gems/ruby-1.9.2-p0/gems/rack-1.2.1/lib/rack/runtime.rb:17:in `call'
+/Users/jon/.rvm/gems/ruby-1.9.2-p0/gems/activesupport-3.0.0/lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+/Users/jon/.rvm/gems/ruby-1.9.2-p0/gems/rack-1.2.1/lib/rack/lock.rb:11:in `block in call'
+<internal:prelude>:10:in `synchronize'
+/Users/jon/.rvm/gems/ruby-1.9.2-p0/gems/rack-1.2.1/lib/rack/lock.rb:11:in `call'
+/Users/jon/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_dispatch/middleware/static.rb:30:in `call'
+/Users/jon/.rvm/gems/ruby-1.9.2-p0/gems/railties-3.0.0/lib/rails/application.rb:168:in `call'
+/Users/jon/.rvm/gems/ruby-1.9.2-p0/gems/railties-3.0.0/lib/rails/application.rb:77:in `method_missing'
+/Users/jon/.rvm/gems/ruby-1.9.2-p0/gems/rack-1.2.1/lib/rack/lint.rb:48:in `_call'
+/Users/jon/.rvm/gems/ruby-1.9.2-p0/gems/rack-1.2.1/lib/rack/lint.rb:36:in `call'
+/Users/jon/.rvm/gems/ruby-1.9.2-p0/gems/rack-1.2.1/lib/rack/showexceptions.rb:24:in `call'
+/Users/jon/.rvm/gems/ruby-1.9.2-p0/gems/rack-1.2.1/lib/rack/commonlogger.rb:18:in `call'
+/Users/jon/.rvm/gems/ruby-1.9.2-p0/gems/unicorn-1.1.3/lib/unicorn.rb:644:in `process_client'
+/Users/jon/.rvm/gems/ruby-1.9.2-p0/gems/unicorn-1.1.3/lib/unicorn.rb:717:in `block in worker_loop'
+/Users/jon/.rvm/gems/ruby-1.9.2-p0/gems/unicorn-1.1.3/lib/unicorn.rb:715:in `each'
+/Users/jon/.rvm/gems/ruby-1.9.2-p0/gems/unicorn-1.1.3/lib/unicorn.rb:715:in `worker_loop'
+/Users/jon/.rvm/gems/ruby-1.9.2-p0/gems/unicorn-1.1.3/lib/unicorn.rb:606:in `block (2 levels) in spawn_missing_workers'
+/Users/jon/.rvm/gems/ruby-1.9.2-p0/gems/unicorn-1.1.3/lib/unicorn.rb:603:in `fork'
+/Users/jon/.rvm/gems/ruby-1.9.2-p0/gems/unicorn-1.1.3/lib/unicorn.rb:603:in `block in spawn_missing_workers'
+/Users/jon/.rvm/gems/ruby-1.9.2-p0/gems/unicorn-1.1.3/lib/unicorn.rb:599:in `each'
+/Users/jon/.rvm/gems/ruby-1.9.2-p0/gems/unicorn-1.1.3/lib/unicorn.rb:599:in `spawn_missing_workers'
+/Users/jon/.rvm/gems/ruby-1.9.2-p0/gems/unicorn-1.1.3/lib/unicorn.rb:613:in `maintain_worker_count'
+/Users/jon/.rvm/gems/ruby-1.9.2-p0/gems/unicorn-1.1.3/lib/unicorn.rb:270:in `start'
+/Users/jon/.rvm/gems/ruby-1.9.2-p0/gems/unicorn-1.1.3/lib/unicorn.rb:29:in `run'
+/Users/jon/.rvm/gems/ruby-1.9.2-p0/gems/unicorn-1.1.3/bin/unicorn:124:in `<top (required)>'
+/Users/jon/.rvm/gems/ruby-1.9.2-p0/bin/unicorn:19:in `load'
+/Users/jon/.rvm/gems/ruby-1.9.2-p0/bin/unicorn:19:in `<main>'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Syntax error: Undefined variable: \"$slushie\".\A         on line 3 of app/styles/home.scss\A \A 1: \A 2: aside.cta {\A 3:   background-color: $slushie;\A 4:   padding: 10px;\A 5:   color: $cream;\A 6: \A 7:   p {\A 8:     font-size: 1.2em;"; }

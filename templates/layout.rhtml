@@ -1,19 +1,51 @@
 <!doctype html>
 <html>
   <head>
-    <link rel="stylesheet" type="text/css" href="/css/main.css">
+    <title><%= title %> | Blank Pad Development</title>
+    <link rel="stylesheet" type="text/css" href="/css/reset.css" />
+    <link rel="stylesheet" type="text/css" href="/css/application.css" />
+    
+    <script type="text/javascript" src="/js/cufon.js"></script>
+    <script type="text/javascript" src="/js/boris_black_bloxx_500.font.js"></script>
+    <script type="text/javascript">
+      Cufon.replace('h1');
+      Cufon.replace('#introduction h2');
+      Cufon.replace('h3');
+      Cufon.replace('a#phone');
+      Cufon.replace('a#email');
+      Cufon.replace('nav ul li');
+    </script>
     <link rel="alternate" type="application/atom+xml" title="<%= title %> - feed" href="/index.xml" />
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/> 
-    <title><%= title %></title>
   </head>
   <body>
-    <section>
-      <%= yield %> 
+    <header id="top">
+      <h1><span>Blank Pad Development</span></h1>
+      <nav>
+        <ul>
+          <li id="about"><a href="/about">About</a></li>
+          <li id="blog"><a href="/">Blog</a></li>
+          <li id="contact"><a href="/contact">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+    <section id="introduction">
+      <div class="container">
+        <img src="/images/jon.jpg" alt="A photo of Jon" width="120" height="120" />
+        <h2>Hello There</h2>
+        <p>
+          I’m Jon, and over the past 6 years I’ve been involved in the development of web applications big and small.
+          Whether you want a full e-commerce solution, an application to streamline your business processes, or 
+          a business idea turned into a reality, I can use some of that experience to help you.
+        </p>
+        <p>
+          Have a look round, and if you like what you see, get in touch to discuss how I can help you.
+        </p>
+      </div>
     </section>
-    <footer>
-      <p><a href="/about">Find out more about this site, and it's author</a></p>
-      <p>powered by <a href="http://cloudhead.io/toto">toto</a></p>
-    </footer>
+    <div id="main">
+      <%= yield %>
+    </div>
+    <footer>&nbsp;</footer>
   </body>
 </html>
-

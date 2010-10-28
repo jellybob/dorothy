@@ -1,0 +1,159 @@
+.container {
+  width: 960px;
+  margin-left: auto;
+  margin-right: auto; }
+
+.clear {
+  clear: both; }
+
+body {
+  background-color: #f9f9f9;
+  font-family: "Helvetica", "Tahoma", sans-serif;
+  font-size: 14px; }
+
+p {
+  margin-bottom: 1em;
+  line-height: 1.2em; }
+
+header#top {
+  width: 960px;
+  margin-left: auto;
+  margin-right: auto;
+  background-image: url("../images/background.gif");
+  padding: 20px 0px;
+  height: 62px; }
+  header#top h1 {
+    float: left;
+    background-image: url("../images/logo.png");
+    width: 269px;
+    height: 62px; }
+    header#top h1 span {
+      display: none; }
+  header#top nav {
+    float: left;
+    margin-left: 320px; }
+    header#top nav ul li {
+      display: block;
+      float: left;
+      font-family: "Boris Black Bloxx";
+      margin-left: 30px;
+      padding-top: 41px; }
+      header#top nav ul li a {
+        color: #776045;
+        font-size: 1.6em; }
+
+body.about nav li#about,
+body.blog nav li#blog,
+body.contact nav li#contact {
+  border-bottom: 3px solid #776045; }
+
+section#introduction {
+  background-color: #0092b2;
+  color: #f9f9f9;
+  padding: 20px 0;
+  font-size: 1.1em;
+  line-height: 1.1em; }
+  section#introduction img {
+    display: block;
+    float: right;
+    padding: 3px;
+    background-color: #f9f9f9;
+    margin-left: 20px; }
+  section#introduction h2 {
+    font-family: "Boris Black Bloxx";
+    font-size: 1.6em;
+    margin-bottom: 0.4em;
+    margin-top: 5px; }
+  section#introduction p {
+    margin-bottom: 0.8em; }
+
+#main {
+  width: 960px;
+  margin-left: auto;
+  margin-right: auto;
+  background-image: url("../images/background.gif");
+  background-repeat: repeat-y;
+  background-position: top left;
+  padding-top: 10px;
+  padding-bottom: 10px; }
+  #main #content {
+    width: 570px; }
+
+aside.cta {
+  background-color: #0092b2;
+  padding: 10px;
+  color: #f9f9f9;
+  margin: 10px 0; }
+  aside.cta h3 {
+    color: #f9f9f9;
+    margin-top: 0;
+    font-size: 1.6em; }
+  aside.cta p {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    line-height: 1.3em; }
+  aside.cta a {
+    display: block;
+    font-family: "Boris Black Bloxx";
+    color: #f9f9f9;
+    font-size: 1.2em; }
+  aside.cta a#phone {
+    float: left; }
+  aside.cta a#email {
+    float: right; }
+
+section.content, article.post {
+  width: 570px;
+  float: left; }
+  section.content h1, article.post h1 {
+    font-size: 1.3em;
+    color: #0092b2;
+    margin-top: 1em;
+    margin-bottom: 0.3em; }
+    section.content h1 a, article.post h1 a {
+      color: #0092b2;
+      text-decoration: none; }
+  section.content p.metadata, article.post p.metadata {
+    font-weight: bold;
+  }
+  section.content, article.post section.content {
+    font-size: 1.1em;
+    line-height: 1.2em;
+  }
+  section.content pre, article.post pre {
+    background-color: #333;
+    padding: 0.5em;
+    color: white;
+    margin-bottom: 1em;
+  }
+  section.content dt {
+    clear: left;
+    float: left;
+    width: 100px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  section.content dd {
+    margin-bottom: 10px;
+  }
+
+section#archives {
+  margin-left: 620px;
+  width: 300px; }
+  section#archives h3 {
+    font-family: "Boris Black Bloxx";
+    color: #776045;
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    margin-top: 10px; }
+  section#archives ul li {
+    margin-bottom: 10px; }
+    section#archives ul li a {
+      color: black;
+      text-decoration: none; }
+ 
+footer {
+  clear: both;
+  margin-bottom: 20px;
+}
