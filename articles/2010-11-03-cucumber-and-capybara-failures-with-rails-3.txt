@@ -1,0 +1,18 @@
+--- 
+title: Cucumber and Capybara Failures With Rails 3
+date: 03/11/2010
+category: Rails
+
+I just hit <a href="https://github.com/jnicklas/capybara/issues/issue/87/#issue/87/comment/433959">this problem</a>
+where Capybara fails while running under Rails 3 with this error when trying to follow a link.
+
+    undefined local variable or method `node' for #<Capybara::Driver::RackTest::Node:object_id> (NameError)
+
+According to the Jonas Nicklas the author, it's solved by removing the line in features/support/env.rb which enables
+Javascript emulation, because that feature no longer exists in Capybara.
+
+Comment out or delete this:
+
+    require 'cucumber/rails/capybara_javascript_emulation' # Lets you click links with onclick javascript handlers without using @culerity or @javascript
+
+And all should be well.
