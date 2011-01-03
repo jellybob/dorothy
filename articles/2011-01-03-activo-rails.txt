@@ -1,0 +1,23 @@
+--- 
+title: Activo Rails
+date: 03/01/2011
+category: Ruby, Rails
+
+Since it was a bank holiday today I decided it was about time that I released a
+small project I've been working on for a while now. I'd had a couple of pull requests
+for it on GitHub already, and so I figured if other people were using and patching it,
+it was probably due for release.
+
+I present to the world [activo-rails](http://rubygems.org/gems/activo-rails/). A Rails
+engine designed to make using [Activo](http://github.com/dmfrancisco/activo/) a more
+pleasurable process. I've been using the theme on a few projects recently, and decided
+I'd had enough of butchering the example page to get to a decent starting point.
+
+The Big Features
+----------------
+
+  * View helpers for menus, breadcrumbs, and controls.
+  * A customisable layout.
+  * The [FatCow icon set](http://fatcow.com/free-icons).
+
+There's more I'd like to add, but as a 1.0, I think this is probably enough.
