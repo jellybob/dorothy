@@ -3,6 +3,10 @@ title: Creating a new Rails 3 Application with Mongoid, RSpec,  Cucumber and Sho
 date: 16/06/2010
 category: Development
 
+*Update:* If you want the full details of how this works, read on. If you just want
+an application now, have a look at the [updated version](/2011/01/05/rails-wizard)
+instead.
+
 This article will work through creating a new Rails 3 application ready to start
 building a site using [Mongoid]("http://mongoid.org/"), and testing it with 
 [Cucumber]("http://cukes.info") and [RSpec]("http://rspec.info").

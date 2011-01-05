@@ -1,0 +1,17 @@
+--- 
+title: Rails Wizard
+date: 05/01/2011
+category: Rails, Ruby, Development
+
+Given that my most popular post (by far) is about creating a new Rails 3 project
+with Mongoid and the assorted extras you always end up needing. It's probably time
+I updated it slightly.
+
+Ignore everything said in there, and instead use this process:
+
+    rails new APP_NAME -m http://railswizard.org/8ae846b8dc35319f5184.rb -T -O -J
+
+[Rails Wizard](http://railswizard.org) was probably the best application to come
+out of last year's Rails Rumble. It allows you to use a simple interface to build
+templates for creating new Rails applications, and then add any extra commands you
+want to run to the end.
