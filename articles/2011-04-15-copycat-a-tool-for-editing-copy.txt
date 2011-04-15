@@ -22,11 +22,17 @@ I want to edit it?" they might say
 I also wasn't thrilled with the idea of paying them between $10 and $45 per month for the privilege of using it. Call
 me cheap if you like, but it just didn't seem worth it.
 
-What did seem worth it was learning a bit more about Sinatra and Redis, which seemed like the right set of tools to be
-using for this particular job. If ever there were a job for a key/value store, this is probably it. And so I set about
-building it.
+Given that situation, and a couple of reasonably free days, I did what any self-respecting software developer would do.
+
+I built some software that's compatiable with Copycopter's client gem, and I open sourced it. That may seem a little 
+excessive to avoid paying a few pounds a month, but it did also give me the chance to try using Sinatra and Redis to
+build something larger then a toy project.
 
 And now you can use it as well. You'll find it on [GitHub](http://github.com/jellybob/copycat). It'll run on Heroku, it'll even
 run on Heroku for free if you don't have that much data (and back it up, there's no persistence guarantees on Redis to Go's
 Nano plan). The web interface is a little rough around the edges still, but it does work, and it's really quick thanks to 
 [PJAX](https://github.com/defunkt/jquery-pjax).
+
+Finally, I'd like to point that on the whole I'm a big fan of Thoughtbot's work. I have paid accounts for both Hoptoad
+and App Trajectory, which I'm a big fan of. Copycopter I thought missed the mark though - the thought of going to a separate page
+for every translation in my application is horrifying to me.
