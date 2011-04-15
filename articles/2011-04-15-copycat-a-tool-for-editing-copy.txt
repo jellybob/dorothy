@@ -6,6 +6,10 @@ category: Ruby
 *TLDR; I wrote an Open Source version of Copycopter's server called Copycat. You can find it on GitHub at
 http://github.com/jellybob/copycat.*
 
+*Update: I've been contacted by Thoughtbot requesting that I change the name, as including the word "Copy"
+in the name of product so similar to Copycopter infringes on their trademark. I fully intend to do so, and
+would welcome suggestions for a new name.*
+
 The last couple of days I've been writing a Sinatra applications which I plan to use for managing copy on
 my client's web applications. It's not a full blown content management system, it's just enough to allow 
 clients to change the titles of pages and the like by themselves.
