@@ -4,14 +4,14 @@ date: 15/04/2011
 category: Ruby
 
 *TLDR; I wrote an Open Source version of Copycopter's server called Copycat. You can find it on GitHub at
-http://github.com/jellybob/copycat.
+http//github.com/jellybob/copycat.*
 
 The last couple of days I've been writing a Sinatra applications which I plan to use for managing copy on
 my client's web applications. It's not a full blown content management system, it's just enough to allow 
 clients to change the titles of pages and the like by themselves.
-
-If you're familiar with [Thoughtbot]:(http://thoughtbot.com) then that might sound like something you've heard
-of before. If you're not, you probably havn't seen [Copycopter]:(http://copycopter.com), which is a tool with
+~
+If you're familiar with [Thoughtbot](http//thoughtbot.com) then that might sound like something you've heard
+of before. If you're not, you probably havn't seen [Copycopter](http//copycopter.com), which is a tool with
 almost exactly that description, and a very neat client gem which synchronises your application's translations
 with the Copycopter web interface.
 
@@ -26,7 +26,7 @@ What did seem worth it was learning a bit more about Sinatra and Redis, which se
 using for this particular job. If ever there were a job for a key/value store, this is probably it. And so I set about
 building it.
 
-And now you can use it as well. You'll find it on [GitHub]:(http://github.com/jellybob/copycat). It'll run on Heroku, it'll even
+And now you can use it as well. You'll find it on [GitHub](http//github.com/jellybob/copycat). It'll run on Heroku, it'll even
 run on Heroku for free if you don't have that much data (and back it up, there's no persistence guarantees on Redis to Go's
 Nano plan). The web interface is a little rough around the edges still, but it does work, and it's really quick thanks to 
-[PJAX]:(https://github.com/defunkt/jquery-pjax).
+[PJAX](https//github.com/defunkt/jquery-pjax).
