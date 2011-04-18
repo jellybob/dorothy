@@ -1,14 +1,13 @@
 --- 
-title: Copycat, a tool for editing copy.
+title: Text Tractor, a tool for editing copy.
 date: 15/04/2011
 category: Ruby
 
-*TLDR; I wrote an Open Source version of Copycopter's server called Copycat. You can find it on GitHub at
-http://github.com/jellybob/copycat.*
+*TLDR; I wrote an Open Source version of Copycopter's server called Text Tractor. You can find it on GitHub at
+http://github.com/jellybob/text_tractor.*
 
-*Update: I've been contacted by Thoughtbot requesting that I change the name, as including the word "Copy"
-in the name of product so similar to Copycopter infringes on their trademark. I fully intend to do so, and
-would welcome suggestions for a new name.*
+*Update: I was asked by Thoughtbot to change the application's name from it's original one, so it's called Text
+Tractor now.*
 
 The last couple of days I've been writing a Sinatra applications which I plan to use for managing copy on
 my client's web applications. It's not a full blown content management system, it's just enough to allow 
@@ -32,7 +31,7 @@ I built some software that's compatiable with Copycopter's client gem, and I ope
 excessive to avoid paying a few pounds a month, but it did also give me the chance to try using Sinatra and Redis to
 build something larger then a toy project.
 
-And now you can use it as well. You'll find it on [GitHub](http://github.com/jellybob/copycat). It'll run on Heroku, it'll even
+And now you can use it as well. You'll find it on [GitHub](http://github.com/jellybob/text_tractor). It'll run on Heroku, it'll even
 run on Heroku for free if you don't have that much data (and back it up, there's no persistence guarantees on Redis to Go's
 Nano plan). The web interface is a little rough around the edges still, but it does work, and it's really quick thanks to 
 [PJAX](https://github.com/defunkt/jquery-pjax).
