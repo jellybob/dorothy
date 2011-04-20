@@ -1,0 +1,42 @@
+--- 
+title: Noumenon. A Ruby based CMS focused on the content.
+date: 20/04/2011
+category: Rails, Noumenon
+
+I've been doing some more Open Sourcery for the last few days, and I think it's just about at a point where I'm happy
+writing about it now.
+
+[Noumenon]:(http://github.com/Noumenon/noumenon) is a content management system which tries to focus on the content, rather 
+then it's presentation. Currently it's roughly equivalent to Jekyll or Toto, but without the blogging focus (although you 
+could probably build a blog with it).
+~
+At the moment the key features that makes this different from every other Ruby based CMS are:
+
+## A focus on splitting content and it's presentation
+
+Content comes in the form of a YAML file, which is then transformed by templates within the site's theme. Each template can
+specify which fields it supports, and which ones are required, with an error being thrown if the content you've written doesn't
+provide all the required fields.
+
+In the near future I'll be providing an backend interface which can use the field metadata provided by a template to generate
+forms for creating and editing the content within your site.
+
+## Simple Themeing
+
+Themes are distributed as Rubygems, and so can come from any source that Bundler supports. My hope is that this will lead to 
+a decent ecosystem of themes being made available for the less design inclined to choose from. Because of the way templates work
+in Noumenon it's possible to create radically different styles of website just by changing the theme.
+
+## Mountable Applications
+
+If your site needs something more then just static content rendered by a template then you can specify points in the URL tree
+that a different application should be mounted. That can be any Rack compatiable application (up to and including a Rails application),
+but Noumenon is designed to make it easy to subclass it's core and continue to make use of your theme's templates.
+
+Once the backend interface is in place mountable applications will also be able to hook into that to provide a way to manage them.
+
+I'd love to hear what people think of this. I'm planning to use it for smaller websites that clients ask me to build, so I'll
+continue building this even if no one else wants to use it, but my long term aim is for this to replace Wordpress as the publishing
+application people want to use.
+
+Yeah, I know. Think small ;)
