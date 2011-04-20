@@ -6,7 +6,7 @@ category: Rails, Noumenon
 I've been doing some more Open Sourcery for the last few days, and I think it's just about at a point where I'm happy
 writing about it now.
 
-[Noumenon]:(http://github.com/Noumenon/noumenon) is a content management system which tries to focus on the content, rather 
+[Noumenon](http://github.com/Noumenon/noumenon) is a content management system which tries to focus on the content, rather 
 then it's presentation. Currently it's roughly equivalent to Jekyll or Toto, but without the blogging focus (although you 
 could probably build a blog with it).
 ~
@@ -24,8 +24,10 @@ forms for creating and editing the content within your site.
 ## Simple Themeing
 
 Themes are distributed as Rubygems, and so can come from any source that Bundler supports. My hope is that this will lead to 
-a decent ecosystem of themes being made available for the less design inclined to choose from. Because of the way templates work
-in Noumenon it's possible to create radically different styles of website just by changing the theme.
+a decent ecosystem of themes being made available for the less design inclined to choose from. 
+
+Themes can provide any number of templates, although there will be a core set which will cover the majority of websites, if 
+you've got something completely different, just create a new template for it.
 
 ## Mountable Applications
 
