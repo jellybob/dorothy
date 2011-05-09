@@ -1,7 +1,24 @@
 
 require 'toto'
 
+class Redirects
+  def initialize(app)
+    @app = app
+  end
+
+  def call(env)
+    req = Rack::Request.new(env)
+    
+    if req.path == "/2011/04/15/text-tractor-a-tool-for-editing-copy/"
+      return [ 301, { Location: "http://blog.blankpad.net/2011/04/15/copycat-a-tool-for-editing-copy/" }, "Redirecting." ]
+    else
+      @app.call(env)
+    end
+  end
+end
+
 # Rack config
+use Redirects
 use Rack::Static, :urls => ['/css', '/js', '/images', '/favicon.ico'], :root => 'public'
 use Rack::CommonLogger
 
