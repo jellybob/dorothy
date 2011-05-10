@@ -3,7 +3,7 @@ title: Logging to Syslog from the command line
 date: 10/05/2011
 category: Sysadmin
 
-Whilst reading about Heroku's logging on [Adam's blog]:(http://adam.heroku.com/past/2011/4/1/logs_are_streams_not_files/) I came across `logger`,
+Whilst reading about Heroku's logging on [Adam's blog](http://adam.heroku.com/past/2011/4/1/logs_are_streams_not_files/) I came across `logger`,
 a tool available on most unix systems which takes any input on STDIN, and redirects it to syslog with the provided options. I'd never heard of it,
 so I assume there's some other people who havn't either, and are doing as I have in the past and messing around with far more convaluted ways of getting
 output routed to syslog.
