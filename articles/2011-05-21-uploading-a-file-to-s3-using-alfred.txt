@@ -1,0 +1,45 @@
+--- 
+title: Uploading a file to S3 using Alfred
+date: 21/05/2011
+category: Mac OS
+
+I use S3 to share files temporarily for people, largely because it's quick and simple
+when using a tool like [s3cmd](http://s3tools.org/s3cmd), close enough to free for the
+cost not to matter.
+
+I also use [Alfred](http://alfredapp.com) to provide a GUI command line for Mac OS.
+
+<img src="/images/uploading_to_s3.png" alt="Uploading a file to S3" width="550" />
+~
+Thanks to Alfred's ability to add shell commands as an action to be taken on files, its
+now possible for me to upload a file directly to my sharing bucket on S3, and copy the URL
+for it to the clipboard.
+
+To do so, start by installing s3cmd. If you're using Homebrew it's a `brew install s3cmd`
+away. Otherwise, you'll have to work it out yourself. Now run `s3cmd --configure` in a shell
+to set it up for your account.
+
+Once that's done, open up Alfred's preferences, select the "Features" tab, and then "Terminal / Shell"
+from the list on the left.
+
+In the shortcuts list hit the + button, and fill in the details, I'm using these:
+
+<dl>
+    <dt>Title</dt>
+    <dd>Upload to S3</dd>
+
+    <dt>Description</dt>
+    <dd>Uploads a file publicly to S3 and copies it's URL to dte clipboard.</dd>
+    
+    <dt>Keyword</dt>
+    <dd>s3</dd>
+    
+    <dt>Command</dt>
+    <dd>s3cmd put -P {query} s3://$SHARING_BUCKET | grep "Public URL" | ruby -e 'print SddIN.read.split(": ").last.strip' | pbcopy</dd>
+</dl>
+
+Make sure to either set the `SHARING_BUCKET` environment variable in your profile, or replace $SHARING_BUCKET with the actual bucket name.
+
+Save that, and then tick the "Silent" and "Action" boxes so that it doesn't pop up a terminal window everytime.
+
+Now you should be able to search for a file in Alfred, hit the right arrow, and enter "s3" to upload it. The URL will be in your clipboard.
