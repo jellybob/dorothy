@@ -1,0 +1,22 @@
+---
+title: Hubbub Are Hiring
+date: 16/02/2012
+category: Work
+
+Since the middle of last year I've been working full time for [Hubbub](http://www.hubbub.co.uk), a company which is supporting local independent food shops
+by providing home delivery services, allowing customers to buy great food even if they're not able to get to the shops during the day. I've been having a
+fabulous time, they've got a great team, and I've learnt more about food in the last 6 months then I ever knew before starting!
+
+We're expanding now, and to do so we need another developer. That's where you come in. If you want to work for a startup which is actually changing things
+that matter, instead of letting you share pictures of kittens in a slightly different way, we want to talk to you.
+~
+The full job description can be found on [our website](http://www.hubbub.co.uk/pages/web-developer), but here's the bullet points:
+
+* Our platform is built with Rails, running on Linux servers.
+* You'll be working on the whole stack, from servers to CSS.
+* We're looking for a problem solver, not just a coder.
+* Flexible working is an option. I work 4 days a week, 3 of which are from home.
+* Perks include [free lunch](https://twitter.com/#!/search/%23lunchtweet%20from%3Ahubbubtweets) when you're in the office, and discounted food.
+
+If that lot interests you, send an email to info@hubbub.co.uk with the subject line "Web Developer" letting us know why you want to work for us, and why we
+should want to work with you.

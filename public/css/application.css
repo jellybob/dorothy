@@ -50,11 +50,11 @@ body.contact nav li#contact {
 section#introduction {
   background-color: #0092b2;
   color: #f9f9f9;
-  padding: 20px 0;
+  padding: 5px 0;
   font-size: 1.1em;
   line-height: 1.1em; }
   section#introduction img {
-    display: block;
+    display: none;
     float: right;
     padding: 3px;
     background-color: #f9f9f9;
@@ -152,7 +152,7 @@ section#archives {
     section#archives ul li a {
       color: black;
       text-decoration: none; }
- 
+
 footer {
   clear: both;
   margin-bottom: 20px;
